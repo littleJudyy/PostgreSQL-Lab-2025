@@ -166,9 +166,9 @@ docker run --name postgres-lab \
 **บันทึกผลการทดลอง - Step 3:**
 ```
 ใส่ Screenshot ของผลการรัน docker run ที่นี่
+```
 <img width="458" height="198" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 45 30" src="https://github.com/user-attachments/assets/d912a632-ab95-4e6a-8bb2-dd904fa86cfd" />
 
-```
 
 ### Step 4: Verify Container Status and Resource Usage
 
@@ -190,6 +190,10 @@ docker volume inspect postgres-data
 ```
 ใส่ Screenshot ของ:
 1. ผลการรัน docker ps
+2. ส่วนหนึ่งของ docker logs postgres-lab
+3. ผลการรัน docker stats
+```
+1. ผลการรัน docker ps
 <img width="991" height="60" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 50 09" src="https://github.com/user-attachments/assets/25ad7aca-b412-45d7-9c3c-c9b09f36f6c4" />
 
 2. ส่วนหนึ่งของ docker logs postgres-lab
@@ -199,8 +203,6 @@ docker volume inspect postgres-data
 3. ผลการรัน docker stats
 <img width="742" height="63" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 56 33" src="https://github.com/user-attachments/assets/9e0386b2-6c82-48f8-b5b8-ec9cce8775df" />
 
-
-```
 
 ### Step 5: Connect to PostgreSQL และตรวจสอบ Configuration
 
@@ -243,6 +245,10 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 ```
 ใส่ Screenshot ของ:
 1. ผลการรัน SELECT version();
+2. ผลการรัน SHOW shared_buffers; SHOW work_mem; SHOW maintenance_work_mem;SHOW effective_cache_size;
+3. ผลการรัน \l และ \du
+```
+1. ผลการรัน SELECT version();
 <img width="861" height="83" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 57 44" src="https://github.com/user-attachments/assets/24794c15-9d86-4c52-ad22-8d7d0261ff6f" />
 
 2. ผลการรัน SHOW shared_buffers; SHOW work_mem; SHOW maintenance_work_mem;SHOW effective_cache_size;
@@ -251,7 +257,6 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 3. ผลการรัน \l และ \du
 <img width="874" height="252" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 00 07" src="https://github.com/user-attachments/assets/3d1bf000-d11f-4012-b46b-92e865bef1eb" />
 
-```
 
 ### Step 6: Database Management Operations
 
@@ -293,6 +298,10 @@ WHERE datname = 'lab_db';
 ```
 ใส่ Screenshot ของ:
 1. ผลการสร้าง lab_db
+2. ผลการรัน \l+ แสดงฐานข้อมูลทั้งหมด
+3. ผลการ query ข้อมูลฐานข้อมูล
+```
+1. ผลการสร้าง lab_db
 <img width="244" height="101" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 01 41" src="https://github.com/user-attachments/assets/4c1295e6-ed07-4973-b92a-ddcf93557fe9" />
 
 2. ผลการรัน \l+ แสดงฐานข้อมูลทั้งหมด
@@ -301,7 +310,6 @@ WHERE datname = 'lab_db';
 3. ผลการ query ข้อมูลฐานข้อมูล
 <img width="573" height="193" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 04 33" src="https://github.com/user-attachments/assets/205be946-5409-42b8-8b39-3b849e878d9d" />
 
-```
 
 ### Step 7: User และ Role Management
 
@@ -357,6 +365,10 @@ WHERE r.rolname NOT LIKE 'pg_%';
 ```
 ใส่ Screenshot ของ:
 1. ผลการสร้าง users ทั้งหมด
+2. ผลการรัน \du+
+3. ผลการ query pg_roles
+```
+1. ผลการสร้าง users ทั้งหมด
 <img width="289" height="346" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 07 09" src="https://github.com/user-attachments/assets/fa6a1a6d-3387-4a4d-b7d8-0227a0b45157" />
 
 2. ผลการรัน \du+
@@ -364,8 +376,6 @@ WHERE r.rolname NOT LIKE 'pg_%';
 
 3. ผลการ query pg_roles
 <img width="804" height="275" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 08 28" src="https://github.com/user-attachments/assets/f0252f22-acd6-4208-a170-fca52e02b005" />
-
-```
 
 ### Step 8: การจัดการสิทธิ์ User
 
