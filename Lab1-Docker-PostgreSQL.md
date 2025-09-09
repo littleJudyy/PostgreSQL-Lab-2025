@@ -81,9 +81,8 @@ docker run hello-world
 **บันทึกผลการทดลอง - การเตรียมความพร้อม:**
 ```
 ใส่ Screenshot ของผลการรัน docker --version และ docker run hello-world ที่นี่
-<img width="557" height="390" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 46 23" src="https://github.com/user-attachments/assets/1d0f79a7-2d89-4460-87c8-2c67513db8bd" />
-
 ```
+<img width="557" height="390" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 46 23" src="https://github.com/user-attachments/assets/1d0f79a7-2d89-4460-87c8-2c67513db8bd" />
 
 ## ขั้นตอนการทดลอง
 
@@ -107,9 +106,8 @@ docker inspect postgres
 **บันทึกผลการทดลอง - Step 1:**
 ```
 ใส่ Screenshot ของผลการรัน docker images ที่นี่
-<img width="455" height="89" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 47 48" src="https://github.com/user-attachments/assets/39dccdca-6a57-432a-ae7b-7ee0806cb61f" />
-
 ```
+<img width="455" height="89" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 47 48" src="https://github.com/user-attachments/assets/39dccdca-6a57-432a-ae7b-7ee0806cb61f" />
 
 ### Step 2: Create Docker Volume for Data Persistence
 
@@ -132,9 +130,9 @@ docker volume create postgres-config
 **บันทึกผลการทดลอง - Step 2:**
 ```
 ใส่ Screenshot ของผลการรัน docker volume ls และ docker volume inspect postgres-data ที่นี่
+```
 <img width="489" height="326" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 48 23" src="https://github.com/user-attachments/assets/38c794f5-640f-4738-a1e8-183de6f76c89" />
 
-```
 
 ### Step 3: Create PostgreSQL Container with Volume
 
