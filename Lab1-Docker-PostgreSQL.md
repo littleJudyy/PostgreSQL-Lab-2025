@@ -438,9 +438,21 @@ GRANT SELECT ON postgres_test_table TO lab_user;
 2. ผลการรัน \dp test_permissions
 3. ผลการ GRANT commands
 ```
+1. ผลการ ALTER USER commands
+<img width="317" height="62" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 18 02" src="https://github.com/user-attachments/assets/f3221bb2-8ceb-475a-bb28-2af404201141" />
+
+2. ผลการรัน \dp test_permissions
+<img width="674" height="122" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 18 58" src="https://github.com/user-attachments/assets/1b60cbac-5c19-4e04-bf4f-2fef74db9e80" />
+
+3. ผลการ GRANT commands
+<img width="1440" height="900" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 19 47" src="https://github.com/user-attachments/assets/05eefd5d-8df5-4f90-8d76-a5b27e4c776f" />
+
+
 **คำถาม
  ```
 Access Privileges   postgres=arwdDxtm/postgres มีความหมายอย่างไร
+user postgres มีสิทธิ์ทุกอย่างบนตารางนั้น (เพิ่ม อ่าน แก้ไข ลบ ล้างตาราง ใช้ foreign key สร้าง trigger และสิทธิ์สมาชิก)
+สิทธิ์ทั้งหมดนี้ถูกให้โดยเจ้าของคือ postgres
 
 
  ```
@@ -550,6 +562,18 @@ INSERT INTO hr.employee_orders (employee_id, customer_id, order_date, commission
 3. ผลการใส่ข้อมูลและ query ข้อมูล
 4. ข้อมูลในตาราง employee_orders ที่จะใช้สำหรับ JOIN ข้าม schema
 ```
+1. ผลการสร้าง schemas (\dn+)
+<img width="704" height="187" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 28 10" src="https://github.com/user-attachments/assets/5afedef3-1ba6-4b28-a910-302095df56f9" />
+
+2. ผลการสร้างตารางในแต่ละ schema
+<img width="461" height="623" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 29 50" src="https://github.com/user-attachments/assets/74144dbc-474f-4f3f-bf7a-35803bd333fa" />
+
+3. ผลการใส่ข้อมูลและ query ข้อมูล
+<img width="674" height="297" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 32 23" src="https://github.com/user-attachments/assets/d6b3392c-d7be-4f5f-a535-d0ccf473b863" />
+
+4. ข้อมูลในตาราง employee_orders ที่จะใช้สำหรับ JOIN ข้าม schema
+<img width="698" height="87" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 33 06" src="https://github.com/user-attachments/assets/40599ba4-a204-4af3-9bb6-741c202cffc1" />
+
 
 ### Step 10: ทดสอบการเข้าถึง Schema และ Search Path
 
@@ -617,6 +641,18 @@ SET search_path TO public;
 3. ผลการ JOIN ข้าม schemas (sales + hr + inventory)
 4. ข้อมูลที่แสดงจาก complex join ข้าม 3 schemas
 ```
+1. ผลการแสดง search_path
+![Uploading ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15.36.50.png…]()
+
+2. ผลการ query ภายใน schema เดียวกัน (sales.customers + sales.orders)
+<img width="401" height="206" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 44 32" src="https://github.com/user-attachments/assets/a3880201-3d4b-4855-89c5-c9179ac839d4" />
+
+3. ผลการ JOIN ข้าม schemas (sales + hr + inventory)
+<img width="585" height="243" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 43 33" src="https://github.com/user-attachments/assets/5074fdda-df86-4783-9962-920a9ccf76ed" />
+
+4. ข้อมูลที่แสดงจาก complex join ข้าม 3 schemas
+<img width="767" height="347" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 43 01" src="https://github.com/user-attachments/assets/6482802d-b368-4879-b0d1-5fd166dda85e" />
+
 
 ### Step 11: ทดสอบการเชื่อมต่อจาก User อื่น
 
@@ -648,6 +684,16 @@ INSERT INTO test_permissions (name) VALUES ('Test by lab_user'); -- ทำไม
 2. ผลการทดสอบสิทธิ์ต่างๆ
 3. ข้อความ error (ถ้ามี) เมื่อไม่มีสิทธิ์
 ```
+1. ผลการเชื่อมต่อด้วย lab_user
+<img width="541" height="60" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 49 39" src="https://github.com/user-attachments/assets/6a840b7c-9b0b-4d39-9d1f-3e0a7f9b9eed" />
+
+2. ผลการทดสอบสิทธิ์ต่างๆ
+<img width="790" height="234" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 50 35" src="https://github.com/user-attachments/assets/d03cbc1b-e29d-4b4c-a4a9-7c09350b9031" />
+
+3. ข้อความ error (ถ้ามี) เมื่อไม่มีสิทธิ์
+<img width="302" height="33" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 51 27" src="https://github.com/user-attachments/assets/3e0e06b4-a957-4720-b3ff-1d0371e5aa95" />
+<img width="376" height="19" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 51 34" src="https://github.com/user-attachments/assets/2fe923c1-0cfc-4eff-8e2a-a75d41633944" />
+
 
 ### Step 12: การจัดการ Volume และ Data Persistence
 
@@ -683,6 +729,14 @@ docker run --name postgres-backup-test \
 2. ยืนยันว่าข้อมูลยังอยู่หลังจาก restart
 3. ผลการสร้าง container พร้อม bind mount
 ```
+1. ผลการหยุดและเริ่ม Container
+<img width="949" height="155" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 55 39" src="https://github.com/user-attachments/assets/1e8d1708-3173-48d9-9fbd-d83cb9272bf3" />
+
+2. ยืนยันว่าข้อมูลยังอยู่หลังจาก restart
+<img width="850" height="88" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 58 16" src="https://github.com/user-attachments/assets/91107e5a-242c-4be1-9787-d2e146b11f44" />
+
+3. ผลการสร้าง container พร้อม bind mount
+<img width="493" height="105" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 59 09" src="https://github.com/user-attachments/assets/373146b6-e14e-46b9-ab7c-c6973909589f" />
 
 ## การตรวจสอบผลงานและ Performance
 
@@ -705,6 +759,8 @@ docker volume inspect postgres-data
 ```
 ใส่ Screenshot ของ resource usage และ volume information ที่นี่
 ```
+<img width="1230" height="422" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 03 02" src="https://github.com/user-attachments/assets/2e34b1d7-4032-4db4-81cc-336416cd0c19" />
+
 
 ### Checkpoint 2: Database Performance และ Configuration
 ```sql
@@ -756,6 +812,15 @@ WHERE state = 'active';
 2. Memory configuration
 3. Active connections
 ```
+1. Database statistics
+<img width="741" height="255" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 04 27" src="https://github.com/user-attachments/assets/da4c54f8-7fcf-41d4-8e2b-099eabab20b0" />
+
+2. Memory configuration
+<img width="332" height="290" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 04 51" src="https://github.com/user-attachments/assets/a1a51861-3165-4026-bf73-34edb0ce494d" />
+
+3. Active connections
+<img width="555" height="178" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 05 15" src="https://github.com/user-attachments/assets/ed6d1db5-7354-43ff-9944-c9dac486fe42" />
+
 
 ## การแก้ไขปัญหาเบื้องต้น
 
@@ -811,6 +876,14 @@ docker volume create postgres-data
 
 ```bash
 # พื้นที่สำหรับคำตอบ - เขียน command ที่ใช้
+docker run -d \
+  --name multi-postgres \
+  -e POSTGRES_PASSWORD=multipass123 \
+  -p 5434:5432 \
+  --memory="1.5g" \
+  --cpus="1.5" \
+  -v multi-postgres-data:/var/lib/postgresql/data \
+  postgres
 
 ```
 
@@ -821,6 +894,15 @@ docker volume create postgres-data
 2. docker ps แสดง container ใหม่
 3. docker stats แสดงการใช้ resources
 ```
+1. คำสั่งที่ใช้สร้าง container
+<img width="467" height="131" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 12 54" src="https://github.com/user-attachments/assets/6513abe1-d247-4d19-b6a9-51397eaa3d70" />
+
+2. docker ps แสดง container ใหม่
+<img width="1117" height="90" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 13 37" src="https://github.com/user-attachments/assets/24ee5949-ba99-4c54-bbd5-5a3d4462df65" />
+
+3. docker stats แสดงการใช้ resource
+<img width="816" height="82" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 17 04" src="https://github.com/user-attachments/assets/d1d5696d-92b0-416a-b074-a13779551a62" />
+
 
 ### แบบฝึกหัด 2: User Management และ Security
 **คำสั่ง**: สร้างระบบผู้ใช้ที่สมบูรณ์:
@@ -847,6 +929,15 @@ docker volume create postgres-data
 2. ผลการรัน \du แสดงผู้ใช้ทั้งหมด
 3. ผลการทดสอบเชื่อมต่อด้วย user ต่างๆ
 ```
+1. การสร้าง roles และ users
+<img width="522" height="260" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 25 04" src="https://github.com/user-attachments/assets/c0e8c13f-889d-4545-a797-2bfb670def93" />
+
+2. ผลการรัน \du แสดงผู้ใช้ทั้งหมด
+<img width="575" height="165" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 25 25" src="https://github.com/user-attachments/assets/822847dd-fa1b-4dd5-8d04-608023f132dd" />
+
+3. ผลการทดสอบเชื่อมต่อด้วย user ต่างๆ
+<img width="817" height="131" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 16 31 23" src="https://github.com/user-attachments/assets/b55cb7d1-f0b9-4a03-a676-9fa19a8458f6" />
+
 
 ### แบบฝึกหัด 3: Schema Design และ Complex Queries
 **คำสั่ง**: สร้างระบบฐานข้อมูลร้านค้าออนไลน์:
