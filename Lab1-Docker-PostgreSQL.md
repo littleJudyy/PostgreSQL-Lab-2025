@@ -1,4 +1,4 @@
-/># Lab 01: PostgreSQL Docker Setup and Basic Operations
+# Lab 01: PostgreSQL Docker Setup and Basic Operations
 
 ## วัตถุประสงค์
 1. ติดตั้งและใช้งาน PostgreSQL ผ่าน Docker
