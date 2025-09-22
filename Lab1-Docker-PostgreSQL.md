@@ -642,7 +642,7 @@ SET search_path TO public;
 4. ข้อมูลที่แสดงจาก complex join ข้าม 3 schemas
 ```
 1. ผลการแสดง search_path
-![Uploading ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15.36.50.png…]()
+<img width="216" height="85" alt="ภาพถ่ายหน้าจอ 2568-09-22 เวลา 20 43 42" src="https://github.com/user-attachments/assets/77b7b5e7-bc5d-4250-88a3-7c621b029389" />
 
 2. ผลการ query ภายใน schema เดียวกัน (sales.customers + sales.orders)
 <img width="401" height="206" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 15 44 32" src="https://github.com/user-attachments/assets/a3880201-3d4b-4855-89c5-c9179ac839d4" />
