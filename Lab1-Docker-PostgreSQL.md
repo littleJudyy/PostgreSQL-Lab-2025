@@ -1,4 +1,4 @@
-<img width="458" height="198" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 45 30" src="https://github.com/user-attachments/assets/9634848d-3c59-4acd-90c0-3e848c699107" /># Lab 01: PostgreSQL Docker Setup and Basic Operations
+/># Lab 01: PostgreSQL Docker Setup and Basic Operations
 
 ## วัตถุประสงค์
 1. ติดตั้งและใช้งาน PostgreSQL ผ่าน Docker
@@ -82,7 +82,7 @@ docker run hello-world
 ```
 ใส่ Screenshot ของผลการรัน docker --version และ docker run hello-world ที่นี่
 ```
-<img width="557" height="390" alt="ภาพถ่ายหน้าจอ 2568-09-09 เวลา 14 46 23" src="https://github.com/user-attachments/assets/1d0f79a7-2d89-4460-87c8-2c67513db8bd" />
+<img width="592" height="393" alt="ภาพถ่ายหน้าจอ 2568-09-22 เวลา 20 34 57" src="https://github.com/user-attachments/assets/87a9d884-d2da-4214-b6dd-d667b139e3da" />
 
 ## ขั้นตอนการทดลอง
 
